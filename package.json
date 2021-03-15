@@ -1,0 +1,44 @@
+{
+  "name": "next-terminal-ssh",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "ace-builds": "^1.4.12",
+    "ant-design-vue": "^1.7.2",
+    "axios": "^0.21.1",
+    "core-js": "^3.6.5",
+    "element-resize-detector": "^1.2.1",
+    "register-service-worker": "^1.7.1",
+    "splitpanes": "^2.3.6",
+    "vue": "^2.6.11",
+    "vue-router": "^3.2.0",
+    "vuex": "^3.4.0",
+    "xterm": "^4.10.0",
+    "xterm-addon-attach": "^0.6.0",
+    "xterm-addon-fit": "^0.5.0",
+    "xterm-addon-search": "^0.8.0"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-plugin-pwa": "~4.5.0",
+    "@vue/cli-plugin-router": "~4.5.0",
+    "@vue/cli-plugin-vuex": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.7.2",
+    "eslint-plugin-vue": "^6.2.2",
+    "github-markdown-css": "^4.0.0",
+    "highlight.js": "^10.5.0",
+    "sass": "^1.26.5",
+    "sass-loader": "^8.0.2",
+    "vue-markdown-loader": "^2.4.1",
+    "vue-svg-loader": "^0.16.0",
+    "vue-template-compiler": "^2.6.12"
+  }
+}
