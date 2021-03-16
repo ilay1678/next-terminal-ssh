@@ -560,7 +560,7 @@ export default {
 			})
 		},
 		isTar(dir) {
-			return 	path.extname(dir) == 'gz'
+			return 	path.extname(dir) == '.gz'
 		},
 		setCommand(command) {
 			if (!command) {
