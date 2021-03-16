@@ -28,7 +28,7 @@ export default {
   actions: {
     addVisitedRoute({ commit }, route) {
       console.log(route)
-      commit('addVisitedRoute', { ...route, title: route.title || route.meta.title || route.name || '' })
+      commit('addVisitedRoute', { ...route, title: (route.query && route.query.name) || (route.params && route.params.name) || route.title || route.meta.title || route.name || '' })
     },
     deleteVisitedRoute({ commit, state }, route) {
       return new Promise(resolve => {

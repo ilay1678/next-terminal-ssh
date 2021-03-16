@@ -151,6 +151,7 @@ export default {
 				},
 				query: {
 					time: new Date().getTime(),
+					name: ssh.name
 				},
 			})
 		},
