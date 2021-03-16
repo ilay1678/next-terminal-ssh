@@ -35,7 +35,7 @@
 				<file
 					class="spin-file"
 					:sessionId="sessionIdList[activePane].value"
-					v-if="sessionIdList[0] && sessionIdList[0].value"
+					v-if="sessionIdList[activePane] && sessionIdList[activePane].value"
 				></file>
 			</pane>
 		</splitpanes>
