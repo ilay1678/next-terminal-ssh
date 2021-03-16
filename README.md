@@ -2,9 +2,12 @@
 
 下一代终端的sshVue实现
 
+## 感谢Next Terminal
+[Next Terminal](https://github.com/dushixiang/next-terminal/)
+
 ## 在线体验
 
-https://gaojianye.github.io/next-terminal-ssh
+[https://gaojianye.github.io/next-terminal-ssh](https://gaojianye.github.io/next-terminal-ssh)
 
 
 ## 功能列表
