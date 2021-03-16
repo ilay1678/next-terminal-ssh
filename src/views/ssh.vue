@@ -91,6 +91,7 @@ export default {
 		},
 		deletePane() {
 			this.sessionIdList.splice(this.activePane, 1)
+			this.activePane = 0
 		},
 	},
 	created() {
