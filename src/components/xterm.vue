@@ -44,6 +44,7 @@
 					v-model="commandSelect"
 					@focus="getCommandList"
 					@select="setCommand('Select')"
+					:loading="commandLoading"
 				>
 					<div slot="dropdownRender" slot-scope="menu">
 						<v-nodes :vnodes="menu" />
@@ -115,6 +116,7 @@ export default {
 				wholeWord: false, // 全字匹配
 				incremental: false, // 增量搜索
 			},
+			commandLoading: false,
 			commandList: [], // 指令列表
 			commandSelect: [], // 下拉选择指令
 			commandAll: false,
@@ -303,9 +305,15 @@ export default {
 			window.open(window.localStorage.getItem("apiUrl") + "/#/dynamic-command")
 		},
 		getCommandList() {
-			this.$http.get("/commands/paging?pageIndex=1&pageSize=200").then((res) => {
-				this.commandList = res.data.items
-			})
+			this.commandLoading = true
+			this.$http
+				.get("/commands/paging?pageIndex=1&pageSize=200")
+				.then((res) => {
+					this.commandList = res.data.items
+				})
+				.finally(() => {
+					this.commandLoading = false
+				})
 		},
 		setCommand(type) {
 			let command = this["command" + type]
@@ -317,9 +325,7 @@ export default {
 			this.$nextTick(() => {
 				this.$store.dispatch("xterm/setCommand", command)
 			})
-			if (type == "Input") {
-				this["command" + type] = ""
-			}
+			this["command" + type] = type == "Input" ? "" : []
 		},
 	},
 	created() {

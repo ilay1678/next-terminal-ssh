@@ -4,13 +4,26 @@
   color: rgb(240, 240, 240);
   background-color: rgb(60, 60, 60);
   border-color: transparent !important;
+  border-radius: 0;
   .ant-menu-item {
+    color: rgb(240, 240, 240);
     height: 1.8em;
     line-height: 1.8em;
     font-size: 13px;
     max-width: 240px;
+    color: inherit;
+    &:hover {
+      color: $--color-primary;
+    }
     .ant-upload {
       color: inherit;
+    }
+  }
+  .ant-dropdown-menu-item {
+    color: rgb(240, 240, 240);
+    background-color: transparent;
+    &:hover {
+      color: $--color-primary;
     }
   }
 }
