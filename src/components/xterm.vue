@@ -125,7 +125,7 @@ export default {
 	watch: {
 		command(value) {
 			if (value && this.socket && (!this.commandSessionId || this.sessionId == this.commandSessionId)) {
-				this.socket.send(JSON.stringify({ type: "data", content: value + "\n" }))
+				this.socket.send(JSON.stringify({ type: "data", content: value + "\r" }))
 			}
 		},
 		commandText(value) {
