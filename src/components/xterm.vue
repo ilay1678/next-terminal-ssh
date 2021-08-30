@@ -190,7 +190,7 @@ export default {
 					// 定时ping
 					this.pingInterval && clearInterval(this.pingInterval)
 					this.pingInterval = setInterval(() => {
-						socket.send(JSON.stringify({ type: "ping" }))
+						socket.send(4)
 					}, 5000)
 				}
 
@@ -204,14 +204,16 @@ export default {
 					}
 				}
 				socket.onmessage = (e) => {
-					let msg = JSON.parse(e.data)
-					switch (msg["type"]) {
+					let msg = e.data
+					const type = msg.substring(0, 1)
+					const data = msg.substring(1)
+					switch (type) {
 						case "connected":
 							term.clear()
 							this.updateSessionStatus()
 							break
-						case "data":
-							term.write(msg["content"])
+						case "2":
+							term.write(data)
 							break
 						case "closed":
 							term.writeln(`\x1B[1;3;31m${msg["content"]}\x1B[0m `)
@@ -247,7 +249,7 @@ export default {
 				term.onData((data) => {
 					console.log(data)
 					if (socket !== undefined) {
-						socket.send(JSON.stringify({ type: "data", content: data }))
+						socket.send('2' + data)
 					}
 				})
 
