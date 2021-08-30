@@ -127,12 +127,12 @@ export default {
 	watch: {
 		command(value) {
 			if (value && this.socket && (!this.commandSessionId || this.sessionId == this.commandSessionId)) {
-				this.socket.send(JSON.stringify({ type: "data", content: value + "\r" }))
+				this.socket.send('2' + value + "\r")
 			}
 		},
 		commandText(value) {
 			if (value && this.socket && (!this.commandSessionId || this.sessionId == this.commandSessionId)) {
-				this.socket.send(JSON.stringify({ type: "data", content: value }))
+				this.socket.send('2' + value)
 			}
 		},
 	},
@@ -152,6 +152,7 @@ export default {
 				.then((res) => {
 					this.sessionId = res.data.id
 					this.sessionIdLoading = false
+					this.updateSessionStatus()
 					this.initXterm()
 				})
 				.catch(() => {
